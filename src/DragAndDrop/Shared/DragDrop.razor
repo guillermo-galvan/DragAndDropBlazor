@@ -1,0 +1,25 @@
+﻿@typeparam TItem
+
+<div class="row overflow-hidden">
+    <div class="col-md-12">
+
+        <div class="overflow-auto">
+            <ul class="list-group" ondragstart="event.dataTransfer.setData('text', event.target.id);"
+                @ondragover:preventDefault @ondragenter:preventDefault @ondrop:preventDefault @ondrop:stopPropagation @ondragenter:stopPropagation 
+                @ondragend:stopPropagation @ondragover:stopPropagation @ondragleave:stopPropagation @ondragstart:stopPropagation>
+                @foreach (var item in _newPosition)
+                {
+                    <li draggable="true" class="list-group-item dd-draggable @CheckIfDragOperationIsInProgess() @GetClassForEnterDrag(item) @(item.IsActive ? "active" : "")"
+                        @onclick="()=> OnClick(item)" 
+                        @ondragstart="()=>OnDragStart(item)" @ondragenter="()=>OnDragEnter(item)" @ondragleave="()=>OnDragLeave(item)" @ondragend="()=>OnDragEnd()">
+                        @if (ItemRender != null && item.Item != null)
+                        {
+                            @ItemRender(item.Item)
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+</div>

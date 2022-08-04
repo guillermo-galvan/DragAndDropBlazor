@@ -1,0 +1,15 @@
+﻿@page "/counter"
+
+<PageTitle>Drag & Drop - String</PageTitle>
+
+<div class="container">
+    <h1>Drag & Drop</h1>
+
+    <DragDrop TItem="string"
+                       Items="@(new List<string>{ "Elemento 1","Elemento 2","Elemento 3","Elemento 4","Elemento 5","Elemento 6",
+                           "Elemento 7","Elemento 8","Elemento 9","Elemento 10" })">
+        <ItemRender Context="item">
+            @item
+        </ItemRender>
+    </DragDrop>
+</div>

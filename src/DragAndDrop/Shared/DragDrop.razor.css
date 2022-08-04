@@ -1,0 +1,11 @@
+﻿.dd-inprogess > * {
+    pointer-events: none;
+}
+
+.dd-draggable {
+    cursor: move;
+}
+
+.dd-enter {
+    opacity: 0.01;
+}

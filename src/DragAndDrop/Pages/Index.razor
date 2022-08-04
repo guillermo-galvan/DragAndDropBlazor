@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<PageTitle>Drag & Drop - Int</PageTitle>
+
+<div class="container">
+    <h1>Drag & Drop</h1>
+
+    <DragDrop TItem="int" Items="@(new List<int>{ 1,2,3,4,5,6,7,8,9 })">
+        <ItemRender Context="item">
+            @item
+        </ItemRender>
+    </DragDrop>
+</div>
